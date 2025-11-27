@@ -25,7 +25,7 @@
 
             {{-- Adopt Button --}}
             @if($pet->availability == 'adoption' || $pet->availability == 'both')
-                <a href="{{ route('adoption.request', $pet->id) }}"
+                <a href="{{ route('pets.process', $pet->id) }}"
                    class="bg-blue-600 text-white px-4 py-2 rounded-lg">
                     Adopt This Pet
                 </a>
@@ -33,12 +33,10 @@
 
             {{-- Buy Button --}}
             @if($pet->availability == 'sale' || $pet->availability == 'both')
-                <form action="{{ route('pets.buy', $pet->id) }}" method="POST">
-                    @csrf
-                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg">
-                        Buy Now
-                    </button>
-                </form>
+                <a href="{{ route('pets.process', $pet->id) }}"
+                   class="bg-green-600 text-white px-4 py-2 rounded-lg">
+                    Buy Now
+                </a>
             @endif
 
         </div>

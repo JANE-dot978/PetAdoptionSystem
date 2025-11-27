@@ -57,4 +57,17 @@ class User extends Authenticatable
     {
         return $this->hasMany(Purchase::class);
     }
+
+    /**
+     * User favorites (many pets)
+     */
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+
+    public function favoritePets()
+    {
+        return $this->belongsToMany(Pet::class, 'favorites');
+    }
 }

@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -93,6 +94,11 @@ Route::middleware(['auth', 'role:admin'])
     Route::get('/reports/users', [ReportController::class, 'users'])->name('reports.users');
     Route::get('/reports/purchases/export', [ReportController::class, 'exportPurchases'])->name('reports.exportPurchases');
     Route::get('/reports/adoptions/export', [ReportController::class, 'exportAdoptions'])->name('reports.exportAdoptions');
+});
+
+// Favorites (server-side)
+Route::middleware(['auth'])->group(function () {
+    Route::post('/pets/{id}/favorite', [\App\Http\Controllers\FavoriteController::class, 'toggle'])->name('pets.favorite');
 });
 
 require __DIR__ . '/auth.php';

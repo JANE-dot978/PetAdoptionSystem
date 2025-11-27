@@ -63,10 +63,15 @@
                         @endif
                     </div>
 
-                    <!-- HEART ICON -->
-                    <button onclick="toggleFavorite(event, {{ $pet->id }})" 
-                            class="absolute top-4 left-4 z-20 bg-white rounded-full p-3 shadow-lg hover:bg-red-50 transition duration-300">
-                        <svg class="w-6 h-6 text-gray-400 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- HEART ICON (server-side favorite) -->
+                    <button onclick="toggleFavorite(event, {{ $pet->id }})"
+                        class="absolute top-4 left-4 z-20 bg-white rounded-full p-3 shadow-lg hover:bg-red-50 transition duration-300"
+                        data-pet-id="{{ $pet->id }}"
+                        aria-label="Favorite">
+                        @php
+                            $isFavorited = auth()->check() && auth()->user()->favoritePets->contains($pet->id);
+                        @endphp
+                        <svg class="w-6 h-6 transition duration-300 {{ $isFavorited ? 'text-red-500' : 'text-gray-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                         </svg>
                     </button>
@@ -266,11 +271,31 @@ let currentPetId = null;
 function toggleFavorite(event, petId) {
     event.preventDefault();
     const button = event.currentTarget;
-    const svg = button.querySelector('svg');
-    svg.classList.toggle('text-gray-400');
-    svg.classList.toggle('text-red-500');
-    button.classList.toggle('bg-white');
-    button.classList.toggle('bg-red-50');
+    
+    @if(!auth()->check())
+        window.location.href = '{{ route("login") }}';
+        return;
+    @endif
+
+    fetch(`/pets/${petId}/favorite`, {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            'Accept': 'application/json',
+        },
+    })
+    .then(res => res.json())
+    .then(data => {
+        const svg = button.querySelector('svg');
+        if (data.favorited) {
+            svg.classList.remove('text-gray-400');
+            svg.classList.add('text-red-500');
+        } else {
+            svg.classList.remove('text-red-500');
+            svg.classList.add('text-gray-400');
+        }
+    })
+    .catch(err => console.error('Error toggling favorite:', err));
 }
 
 function openTermsModal(action, petId) {

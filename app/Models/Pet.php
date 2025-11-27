@@ -39,4 +39,12 @@ class Pet extends Model
     {
         return $this->hasOne(Adoption::class)->latestOfMany();
     }
+
+    /**
+     * Users who favorited this pet
+     */
+    public function favoritedBy()
+    {
+        return $this->belongsToMany(User::class, 'favorites');
+    }
 }
