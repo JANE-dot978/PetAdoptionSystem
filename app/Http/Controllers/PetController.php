@@ -70,8 +70,8 @@ class PetController extends Controller
             $query->where('age', '<=', $request->age_max);
         }
 
-        // Pagination (8 pets per page)
-        $pets = $query->paginate(8)->withQueryString();
+        // Pagination (6 pets per page)
+        $pets = $query->paginate(6)->withQueryString();
 
         return view('browse', compact('pets', 'types'));
     }

@@ -8,41 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-gray-100 min-h-screen flex">
-
-    <!-- SIDEBAR --><!-- SIDEBAR -->
-<a href="{{ route('dashboard') }}"
-    class="hover:bg-gray-700 p-2 rounded">🏠 Dashboard</a>
-
-<a href="{{ route('admin.pets.index') }}"
-    class="hover:bg-gray-700 p-2 rounded">🐾 Pets</a>
-
-<a href="{{ route('admin.pets.create') }}"
-    class="hover:bg-gray-700 p-2 rounded">➕ Add Pet</a>
-
-<a href="{{ route('admin.adoptions') }}"
-    class="hover:bg-gray-700 p-2 rounded">📥 Adoption Requests</a>
-
-<a href="{{ url('/') }}"
-    class="hover:bg-gray-700 p-2 rounded">🌐 View Website</a>
-
-
-    <form action="{{ route('logout') }}" method="POST" class="mt-auto">
-        @csrf
-        <button class="w-full bg-red-600 p-2 rounded hover:bg-red-700">
-            🚪 Logout
-        </button>
-    </form>
-</aside>
-
-
-        <form action="{{ route('logout') }}" method="POST" class="mt-auto">
-            @csrf
-            <button class="w-full bg-red-600 p-2 rounded hover:bg-red-700">
-                🚪 Logout
-            </button>
-        </form>
-    </aside>
+<body class="bg-gray-100 min-h-screen flex flex-col">
 
     <!-- MAIN CONTENT -->
     <main class="flex-1 p-6">
@@ -58,6 +24,16 @@
             {{ $slot }}
         </div>
     </main>
+
+    <!-- FOOTER LOGOUT -->
+    <footer class="bg-white border-t border-gray-200 p-4 mt-auto">
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button class="w-full bg-red-600 text-white p-3 rounded-lg hover:bg-red-700 transition font-bold">
+                🚪 Logout
+            </button>
+        </form>
+    </footer>
 
 </body>
 </html>

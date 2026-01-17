@@ -30,24 +30,24 @@
         <div class="container mx-auto px-4 text-center relative z-10">
             <div class="max-w-6xl mx-auto">
                 <!-- Premium Badge -->
-                <div class="inline-flex items-center bg-white/20 backdrop-blur-lg rounded-full px-6 py-3 mb-8 border border-white/30">
+                <div class="inline-flex items-center bg-white/30 backdrop-blur-lg rounded-full px-6 py-3 mb-8 border border-white/50">
                     <span class="w-2 h-2 bg-cyan-300 rounded-full mr-2 animate-pulse"></span>
-                    <span class="text-white font-semibold text-sm">Trusted by 10,000+ Pet Lovers</span>
+                    <span class="text-black font-semibold text-sm">Trusted by 10,000+ Pet Lovers</span>
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight text-white">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight text-black">
                     <span class="block text-4xl md:text-5xl mb-4">Find Your Perfect</span>
-                    <span class="block bg-gradient-to-r from-cyan-200 to-blue-100 bg-clip-text text-transparent drop-shadow-lg">Furry Friend</span>
+                    <span class="block text-black drop-shadow-lg">Furry Friend</span>
                 </h1>
                 
-                <p class="text-xl md:text-2xl mb-12 text-white max-w-4xl mx-auto leading-relaxed font-medium">
-                    Where love finds a home. Adopt, don't shop — give a homeless pet a loving family and discover unconditional love.
+                <p class="text-xl md:text-2xl mb-12 text-black max-w-4xl mx-auto leading-relaxed font-semibold">
+                    Where love finds a home. Adopt, and shop — give a homeless pet a loving family and discover unconditional love.
                 </p>
                 
                 <!-- Enhanced CTA Buttons -->
                 <div class="flex flex-col sm:flex-row justify-center gap-6 mb-16">
                     <a href="{{ route('browse.pets') }}" 
-                       class="group bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white px-12 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 flex items-center justify-center min-w-[280px] relative overflow-hidden border-2 border-white">
+                       class="group bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-black px-12 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 flex items-center justify-center min-w-[280px] relative overflow-hidden border-2 border-white">
                         <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                         <i class="fas fa-paw mr-4 text-xl group-hover:rotate-12 transition-transform duration-300 relative z-10"></i>
                         <span class="relative z-10">Browse Available Pets</span>
@@ -113,7 +113,7 @@
                         </div>
                         <h3 class="text-2xl font-black text-black mb-2">{{ $category['title'] }}</h3>
                         <p class="text-black font-semibold mb-4">{{ $category['count'] }}</p>
-                        <a href="#" class="inline-block bg-{{ $category['color'] }}-100 text-black px-6 py-2 rounded-full text-sm font-bold group-hover:bg-{{ $category['color'] }}-200 transition-colors duration-300 border-2 border-black">
+                        <a href="#" class="inline-block bg-gray-100 text-black px-6 py-2 rounded-full text-sm font-bold group-hover:bg-gray-200 transition-colors duration-300 border-2 border-black">
                             Explore {{ $category['title'] }}
                         </a>
                     </div>
@@ -205,14 +205,14 @@
                         <h3 class="text-2xl font-black text-black mb-2">{{ $story['name'] }}</h3>
                         <p class="text-black mb-4">{{ $story['story'] }}</p>
                         <div class="flex justify-between items-center">
-                            <div class="flex items-center text-sm text-gray-600">
+                            <div class="flex items-center text-sm text-black">
                                 <span class="mr-2">Before</span>
                                 <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-blue-300">
                                     <img src="{{ $story['before'] }}" alt="Before" class="w-full h-full object-cover">
                                 </div>
                             </div>
                             <i class="fas fa-arrow-right text-blue-500"></i>
-                            <div class="flex items-center text-sm text-gray-600">
+                            <div class="flex items-center text-sm text-black">
                                 <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-green-300">
                                     <img src="{{ $story['after'] }}" alt="After" class="w-full h-full object-cover">
                                 </div>
@@ -267,7 +267,7 @@
                     </div>
                     <h4 class="font-bold text-black text-lg mb-1">{{ $pet['name'] }}</h4>
                     <p class="text-black text-sm font-medium mb-1">{{ $pet['type'] }}</p>
-                    <p class="text-gray-600 text-xs">{{ $pet['age'] }}</p>
+                    <p class="text-black text-xs">{{ $pet['age'] }}</p>
                 </div>
                 @endforeach
             </div>
@@ -491,16 +491,16 @@
         </div>
         
         <div class="container mx-auto px-4 text-center relative z-10">
-            <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">
+            <h2 class="text-4xl md:text-5xl font-black mb-6 text-black">
                 Ready to Find Your New Best Friend?
             </h2>
-            <p class="text-xl mb-10 max-w-3xl mx-auto text-white font-medium leading-relaxed">
+            <p class="text-xl mb-10 max-w-3xl mx-auto text-black font-semibold leading-relaxed">
                 Join thousands of happy families who found their perfect pet through PetPals. Start your adoption journey today!
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
                 <a href="{{ route('browse.pets') }}" 
-                   class="group bg-gradient-to-r from-cyan-400 to-blue-500 text-white px-12 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 flex items-center justify-center min-w-[300px] border-2 border-white">
+                   class="group bg-gradient-to-r from-cyan-400 to-blue-500 text-black px-12 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 flex items-center justify-center min-w-[300px] border-2 border-white">
                     <i class="fas fa-search mr-4 text-2xl group-hover:rotate-12 transition-transform duration-300"></i> 
                     Browse Available Pets
                 </a>
@@ -518,9 +518,9 @@
                     ['icon' => 'award', 'text' => 'Verified Shelters'],
                     ['icon' => 'heart', 'text' => 'Lifetime Guarantee']
                 ] as $feature)
-                <div class="flex items-center bg-white/20 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/30 group hover:bg-white/30 transition-all duration-300">
-                    <i class="fas fa-{{ $feature['icon'] }} mr-3 text-cyan-200 group-hover:scale-110 transition-transform duration-300"></i>
-                    <span class="font-bold text-lg text-white">{{ $feature['text'] }}</span>
+                <div class="flex items-center bg-white/30 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/40 group hover:bg-white/40 transition-all duration-300">
+                    <i class="fas fa-{{ $feature['icon'] }} mr-3 text-cyan-100 group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="font-bold text-lg text-black drop-shadow-sm">{{ $feature['text'] }}</span>
                 </div>
                 @endforeach
             </div>

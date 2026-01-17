@@ -13,10 +13,17 @@ class Pet extends Model
         'name',
         'pet_type_id',
         'species',
+        'breed',
+        'color',
+        'weight',
         'age',
         'gender',
         'description',
+        'detailed_description',
         'image_url',
+        'vaccinated',
+        'neutered_spayed',
+        'special_needs',
         'status', // available, pending, adopted
         'availability', // adoption, sale, both
         'price',        // only for sale
