@@ -51,7 +51,9 @@ jobs:
         run: php artisan key:generate
 
       - name: Run database migrations
-        run: php artisan migrate --force
+        run: |
+          php artisan config:clear
+          php artisan migrate --force
 
       - name: Execute tests
         run: vendor/bin/phpunit
