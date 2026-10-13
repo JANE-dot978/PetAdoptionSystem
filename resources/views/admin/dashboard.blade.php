@@ -12,7 +12,7 @@
                 <p class="text-gray-600 font-semibold text-sm uppercase tracking-wide">Total Users</p>
                 <p class="text-4xl font-bold text-gray-900 mt-2">{{ $totalUsers }}</p>
             </div>
-            <span class="text-5xl text-blue-200">👥</span>
+            <i class="fas fa-users text-5xl text-blue-200"></i>
         </div>
     </div>
 
@@ -22,7 +22,7 @@
                 <p class="text-gray-600 font-semibold text-sm uppercase tracking-wide">Total Pets</p>
                 <p class="text-4xl font-bold text-gray-900 mt-2">{{ $totalPets }}</p>
             </div>
-            <span class="text-5xl text-green-200">🐾</span>
+            <i class="fas fa-paw text-5xl text-green-200"></i>
         </div>
     </div>
 
@@ -32,7 +32,7 @@
                 <p class="text-gray-600 font-semibold text-sm uppercase tracking-wide">Total Sales</p>
                 <p class="text-4xl font-bold text-gray-900 mt-2">KSH {{ number_format($totalSales, 0) }}</p>
             </div>
-            <span class="text-5xl text-purple-200">💰</span>
+            <i class="fas fa-sack-dollar text-5xl text-purple-200"></i>
         </div>
     </div>
 
@@ -44,7 +44,7 @@
                     <a href="{{ route('admin.pets.create') }}" class="block text-blue-600 hover:text-blue-700 font-semibold text-sm">+ Add Pet</a>
                 </div>
             </div>
-            <span class="text-5xl text-orange-200">⚡</span>
+            <i class="fas fa-bolt text-5xl text-orange-200"></i>
         </div>
     </div>
 </div>
@@ -91,11 +91,11 @@
                             @if($req->status === 'pending')
                                 <form action="{{ route('admin.adoptions.approve', $req->id) }}" method="POST" class="inline">
                                     @csrf
-                                    <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold text-sm transition">✓ Approve</button>
+                                    <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold text-sm transition"><i class="fas fa-check"></i> Approve</button>
                                 </form>
                                 <form action="{{ route('admin.adoptions.reject', $req->id) }}" method="POST" class="inline">
                                     @csrf
-                                    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-bold text-sm transition">✕ Reject</button>
+                                    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-bold text-sm transition"><i class="fas fa-xmark"></i> Reject</button>
                                 </form>
                             @else
                                 <span class="text-gray-500 text-sm">-</span>
@@ -112,21 +112,21 @@
 <!-- Quick Links -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <a href="{{ route('admin.pets.index') }}" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition border-t-4 border-blue-500">
-        <div class="text-4xl mb-3">🐾</div>
+        <i class="fas fa-paw text-4xl mb-3 text-blue-500"></i>
         <h4 class="text-xl font-bold text-gray-900">Manage Pets</h4>
         <p class="text-gray-600 text-sm mt-2">Edit, delete, or view all pets in the system</p>
         <span class="text-blue-600 font-bold text-sm mt-3 inline-block">Go to Pets →</span>
     </a>
 
     <a href="{{ route('admin.users') }}" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition border-t-4 border-green-500">
-        <div class="text-4xl mb-3">👥</div>
+        <i class="fas fa-users text-4xl mb-3 text-green-500"></i>
         <h4 class="text-xl font-bold text-gray-900">Manage Users</h4>
         <p class="text-gray-600 text-sm mt-2">View all registered users and their activity</p>
         <span class="text-green-600 font-bold text-sm mt-3 inline-block">Go to Users →</span>
     </a>
 
     <a href="{{ route('admin.reports.index') }}" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition border-t-4 border-purple-500">
-        <div class="text-4xl mb-3">📊</div>
+        <i class="fas fa-chart-column text-4xl mb-3 text-purple-500"></i>
         <h4 class="text-xl font-bold text-gray-900">View Reports</h4>
         <p class="text-gray-600 text-sm mt-2">Check sales, adoptions, and user analytics</p>
         <span class="text-purple-600 font-bold text-sm mt-3 inline-block">Go to Reports →</span>

@@ -11,13 +11,13 @@
         </div>
         <div class="flex gap-3">
             <a href="{{ route('admin.pets.index') }}" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition font-semibold">
-                ← Back
+                <i class="fas fa-arrow-left"></i> Back
             </a>
             <form action="{{ route('admin.pets.destroy', $pet->id) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this pet? This action cannot be undone.');">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition font-semibold">
-                    🗑️ Delete Pet
+                    <i class="fas fa-trash"></i> Delete Pet
                 </button>
             </form>
         </div>
@@ -219,10 +219,10 @@
                     <!-- Action Buttons -->
                     <div class="flex gap-4 pt-4 border-t border-gray-200">
                         <button type="submit" class="bg-blue-600 text-white px-8 py-2 rounded-lg hover:bg-blue-700 transition font-bold" id="submitBtn">
-                            ✓ Save Changes
+                            <i class="fas fa-check"></i> Save Changes
                         </button>
                         <a href="{{ route('admin.pets.index') }}" class="bg-gray-400 text-white px-8 py-2 rounded-lg hover:bg-gray-500 transition font-bold">
-                            ✕ Cancel
+                            <i class="fas fa-xmark"></i> Cancel
                         </a>
                     </div>
 

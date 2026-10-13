@@ -1,3 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+[x-cloak] {
+    display: none !important;
+}
+
+@layer components {
+    .page-container {
+        @apply container mx-auto px-4 md:px-6;
+    }
+
+    .section-title {
+        @apply text-3xl md:text-4xl font-extrabold text-gray-900;
+    }
+
+    .section-subtitle {
+        @apply text-gray-500 max-w-2xl mx-auto leading-relaxed;
+    }
+
+    .card {
+        @apply bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300;
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl font-bold px-5 py-2.5 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    .btn-primary {
+        @apply btn bg-blue-600 text-white shadow-sm hover:bg-blue-700 hover:shadow-md;
+    }
+
+    .btn-accent {
+        @apply btn bg-green-500 text-white shadow-sm hover:bg-green-600 hover:shadow-md;
+    }
+
+    .btn-outline {
+        @apply btn border-2 border-gray-200 text-gray-700 bg-white hover:border-blue-500 hover:text-blue-600;
+    }
+
+    .btn-danger {
+        @apply btn bg-red-600 text-white shadow-sm hover:bg-red-700 hover:shadow-md;
+    }
+
+    .badge {
+        @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold;
+    }
+
+    .badge-adopt {
+        @apply badge bg-green-100 text-green-700;
+    }
+
+    .badge-buy {
+        @apply badge bg-blue-100 text-blue-700;
+    }
+}

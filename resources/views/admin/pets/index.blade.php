@@ -8,7 +8,7 @@
             <p class="text-gray-600 mt-1">Manage and organize all pets in the system</p>
         </div>
         <a href="{{ route('admin.pets.create') }}" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-bold shadow-lg">
-            ➕ Add New Pet
+            <i class="fas fa-plus"></i> Add New Pet
         </a>
     </div>
 
@@ -71,7 +71,7 @@
                             <td class="px-6 py-4">
                                 <div class="flex gap-2 justify-center">
                                     <a href="{{ route('admin.pets.edit', $pet->id) }}" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition font-bold text-sm shadow-md">
-                                        ✏️ Edit
+                                        <i class="fas fa-pen"></i> Edit
                                     </a>
                                 </div>
                             </td>

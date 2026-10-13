@@ -55,7 +55,7 @@
             </div>
         @else
             <div class="text-center py-16 px-8">
-                <div class="text-gray-300 text-6xl mb-4">👤</div>
+                <i class="fas fa-user text-gray-300 text-6xl mb-4"></i>
                 <p class="text-xl font-bold text-gray-600 mb-2">No Users Found</p>
                 <p class="text-gray-500">There are currently no users registered in the system.</p>
             </div>

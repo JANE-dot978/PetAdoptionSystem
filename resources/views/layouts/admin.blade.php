@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name', 'Pet Adoption Admin') }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         * {
@@ -99,7 +100,7 @@
             <!-- Logo -->
             <div class="mb-8">
                 <h2 class="text-2xl font-bold text-center text-blue-600 flex items-center justify-center gap-2">
-                    <span class="text-3xl">🐾</span>
+                    <i class="fas fa-paw text-3xl"></i>
                     <span>Admin</span>
                 </h2>
             </div>
@@ -107,27 +108,27 @@
             <!-- Navigation -->
             <nav class="flex flex-col gap-2">
                 <a href="{{ route('admin.dashboard') }}" class="nav-item {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
-                    <span class="sidebar-icon">🏠</span>
+                    <i class="fas fa-house sidebar-icon"></i>
                     <span>Dashboard</span>
                 </a>
-                <a href="{{ route('admin.pets.index') }}" class="nav-item {{ request()->routeIs('admin.pets.*') ? 'active' : '' }}">
-                    <span class="sidebar-icon">🐾</span>
+                <a href="{{ route('admin.pets.index') }}" class="nav-item {{ request()->routeIs('admin.pets.*') && !request()->routeIs('admin.pets.create') ? 'active' : '' }}">
+                    <i class="fas fa-paw sidebar-icon"></i>
                     <span>Manage Pets</span>
                 </a>
                 <a href="{{ route('admin.pets.create') }}" class="nav-item {{ request()->routeIs('admin.pets.create') ? 'active' : '' }}">
-                    <span class="sidebar-icon">➕</span>
+                    <i class="fas fa-plus sidebar-icon"></i>
                     <span>Add New Pet</span>
                 </a>
                 <a href="{{ route('admin.adoptions') }}" class="nav-item {{ request()->routeIs('admin.adoptions') ? 'active' : '' }}">
-                    <span class="sidebar-icon">📥</span>
+                    <i class="fas fa-inbox sidebar-icon"></i>
                     <span>Adoption Requests</span>
                 </a>
                 <a href="{{ route('admin.users') }}" class="nav-item {{ request()->routeIs('admin.users') ? 'active' : '' }}">
-                    <span class="sidebar-icon">👤</span>
+                    <i class="fas fa-user sidebar-icon"></i>
                     <span>Users</span>
                 </a>
                 <a href="{{ route('admin.reports.index') }}" class="nav-item {{ request()->routeIs('admin.reports.*') ? 'active' : '' }}">
-                    <span class="sidebar-icon">📊</span>
+                    <i class="fas fa-chart-column sidebar-icon"></i>
                     <span>Reports</span>
                 </a>
             </nav>
@@ -136,7 +137,7 @@
             <form action="{{ route('logout') }}" method="POST" class="pt-6 border-t border-gray-200 mt-auto">
                 @csrf
                 <button class="w-full nav-item bg-red-50 hover:bg-red-100 text-red-600 font-bold transition justify-center gap-2">
-                    <span class="sidebar-icon">🚪</span>
+                    <i class="fas fa-right-from-bracket sidebar-icon"></i>
                     <span>Logout</span>
                 </button>
             </form>

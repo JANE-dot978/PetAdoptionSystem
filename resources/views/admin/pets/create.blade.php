@@ -8,7 +8,7 @@
             <p class="text-gray-600 mt-1">Fill in the pet details below</p>
         </div>
         <a href="{{ route('admin.pets.index') }}" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition font-bold">
-            ← Back
+            <i class="fas fa-arrow-left"></i> Back
         </a>
     </div>
 
@@ -171,7 +171,7 @@
 
         <!-- Submit Buttons -->
         <div class="flex gap-4 pt-4 border-t border-gray-200">
-            <button type="submit" class="bg-blue-600 text-white px-8 py-2 rounded-lg hover:bg-blue-700 transition font-bold" id="submitBtn">➕ Add Pet</button>
+            <button type="submit" class="bg-blue-600 text-white px-8 py-2 rounded-lg hover:bg-blue-700 transition font-bold" id="submitBtn"><i class="fas fa-plus"></i> Add Pet</button>
             <a href="{{ route('admin.pets.index') }}" class="bg-gray-400 text-white px-8 py-2 rounded-lg hover:bg-gray-500 transition font-bold">Cancel</a>
         </div>
     </form>
