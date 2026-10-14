@@ -10,11 +10,14 @@ class HomeController extends Controller
     // Homepage
     public function home()
     {
-        // Show only pets that are not adopted yet  
-       $featuredPets = Pet::where('status', 'available')->take(3)->get();
+        $availablePets = Pet::with('petType')
+            ->where('status', 'available')
+            ->whereIn('availability', ['adoption', 'both'])
+            ->latest()
+            ->take(2)
+            ->get();
 
-
-        return view('home', compact('featuredPets'));
+        return view('home', compact('availablePets'));
     }
 
     // About Page

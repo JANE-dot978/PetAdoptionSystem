@@ -5,316 +5,206 @@
 <div class="min-h-screen bg-gray-50">
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 py-20 md:py-28 relative overflow-hidden">
-        <!-- Background Elements -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full"></div>
-            <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-amber-400/20 rounded-full animate-float"></div>
-        </div>
-
-        <div class="page-container text-center relative z-10">
-            <div class="max-w-5xl mx-auto">
-
-                <!-- Pet Icons -->
-                <div class="flex justify-center space-x-8 mb-10">
-                    <span class="text-6xl inline-block animate-bounce transform hover:scale-110 transition-transform duration-300">🐶</span>
-                    <span class="text-6xl inline-block animate-bounce transform hover:scale-110 transition-transform duration-300" style="animation-delay: 0.3s;">🐱</span>
-                    <span class="text-6xl inline-block animate-bounce transform hover:scale-110 transition-transform duration-300" style="animation-delay: 0.6s;">🐰</span>
-                    <span class="text-6xl inline-block animate-bounce transform hover:scale-110 transition-transform duration-300" style="animation-delay: 0.9s;">🐦</span>
-                </div>
-
-                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight text-white">
-                    Find Your Perfect
-                    <span class="block text-amber-400">Furry Friend</span>
+    <section class="relative overflow-hidden bg-[#fffaf5]">
+        <div class="mx-auto grid min-h-[520px] w-full max-w-[1250px] items-center gap-8 px-5 py-10 md:grid-cols-2 md:gap-10 md:px-8 md:py-8 xl:max-w-[1040px] xl:grid-cols-[610px_400px] xl:gap-[30px] xl:px-0">
+            <div class="max-w-[610px] py-2 md:py-4">
+                <p class="mb-5 inline-flex items-center gap-2 rounded-full bg-[#ffebe2] px-4 py-2 text-sm font-bold text-[#d95d3f]">
+                    Better Care <span aria-hidden="true">•</span> Happier Pets
+                </p>
+                <h1 class="mb-5 text-4xl font-black leading-[1.08] text-slate-900 sm:text-5xl xl:text-[50px]">
+                    Everything your pet<br>
+                    needs, <span class="text-[#ef704d]">all in one place.</span>
                 </h1>
-
-                <p class="text-xl md:text-2xl mb-10 text-blue-50 max-w-3xl mx-auto leading-relaxed font-medium">
-                    Adopt, and shop — give a homeless pet a loving home and discover unconditional love <i class="fas fa-heart"></i>
+                <p class="mb-6 max-w-[510px] text-base leading-7 text-slate-600 sm:text-lg">
+                    Meet your new best friend and find the care, guidance, and essentials to help them feel right at home.
                 </p>
-
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-                    <a href="{{ route('browse.pets') }}"
-                       class="group bg-white text-blue-700 px-10 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3 min-w-[260px]">
-                        <i class="fas fa-paw text-xl group-hover:rotate-12 transition-transform duration-300"></i>
-                        Browse Available Pets
+                <div class="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                    <a href="{{ route('browse.pets') }}" class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#ef704d] px-8 py-3 font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#df5d3c]">
+                        Browse Pets <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
-                    <a href="#adoption-process"
-                       class="group bg-white/10 backdrop-blur-lg border-2 border-white/60 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3 min-w-[260px]">
-                        <i class="fas fa-circle-play text-xl group-hover:scale-110 transition-transform duration-300"></i>
-                        How to Adopt
+                    <a href="{{ route('browse.pets') }}" class="inline-flex min-h-12 items-center justify-center rounded-full border border-[#ef704d] px-8 py-3 font-bold text-[#d95d3f] transition hover:bg-[#fff0e9]">
+                        Adopt a Pet
                     </a>
                 </div>
 
-                <!-- Stats Section -->
-                <div class="bg-white/95 backdrop-blur-xl rounded-3xl p-8 md:p-10 max-w-5xl mx-auto shadow-2xl">
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                        @foreach([
-                            ['num' => '2,500+', 'label' => 'Pets Adopted'],
-                            ['num' => '98%', 'label' => 'Success Rate'],
-                            ['num' => '150+', 'label' => 'Rescue Partners'],
-                            ['num' => '24/7', 'label' => 'Support'],
-                        ] as $stat)
-                        <div class="text-center">
-                            <div class="text-4xl md:text-5xl font-black text-blue-600 mb-1">{{ $stat['num'] }}</div>
-                            <div class="text-gray-600 font-semibold tracking-wide">{{ $stat['label'] }}</div>
-                        </div>
-                        @endforeach
+                <div class="mt-8 grid max-w-[590px] grid-cols-1 gap-4 border-t border-[#eadfd7] pt-5 sm:grid-cols-3 sm:gap-2">
+                    <div class="flex items-center gap-3 text-sm text-slate-700 sm:border-r sm:border-[#eadfd7] sm:pr-2">
+                        <i class="fas fa-shield-heart text-xl text-[#ef704d]" aria-hidden="true"></i>
+                        <span><strong class="block font-bold">Thoughtful matching</strong><span class="text-slate-500">Find your right fit</span></span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-slate-700 sm:border-r sm:border-[#eadfd7] sm:px-2">
+                        <i class="fas fa-paw text-xl text-[#ef704d]" aria-hidden="true"></i>
+                        <span><strong class="block font-bold">Pets come first</strong><span class="text-slate-500">Care at every step</span></span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-slate-700 sm:pl-2">
+                        <i class="fas fa-heart text-xl text-[#ef704d]" aria-hidden="true"></i>
+                        <span><strong class="block font-bold">A better beginning</strong><span class="text-slate-500">Love starts here</span></span>
                     </div>
                 </div>
+            </div>
+
+            <div class="relative isolate mx-auto h-[440px] w-full max-w-[650px] bg-[#fffaf5] md:h-[460px] xl:mx-0 xl:h-[500px] xl:w-full xl:max-w-none">
+                <img
+                    src="{{ asset('images/pet-hero.jpg') }}"
+                    alt="A playful puppy and kitten cuddled together beneath a blanket"
+                    class="hero-photo-blend relative z-10 h-full max-w-full object-contain object-left"
+                >
             </div>
         </div>
     </section>
 
-    <!-- Featured Pets Spotlight -->
-    <section class="py-20">
-        <div class="page-container">
-            <div class="text-center mb-14">
-                <h2 class="section-title mb-4">Featured Pets of the Week</h2>
-                <p class="section-subtitle mx-auto">
-                    These adorable pets are looking for their forever homes. Could one of them be your perfect match?
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                @foreach([
-                    ['name' => 'Max', 'type' => 'Golden Retriever', 'age' => '2 years', 'location' => 'New York', 'img' => 'https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=962&q=80', 'description' => 'Friendly and energetic, loves playing fetch and cuddles'],
-                    ['name' => 'Luna', 'type' => 'Siamese Cat', 'age' => '1.5 years', 'location' => 'Chicago', 'img' => 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1143&q=80', 'description' => 'Playful and curious, gets along well with other pets'],
-                    ['name' => 'Coco', 'type' => 'Rabbit', 'age' => '8 months', 'location' => 'Los Angeles', 'img' => 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1169&q=80', 'description' => 'Gentle and affectionate, loves fresh vegetables and hay']
-                ] as $pet)
-                <div class="group card overflow-hidden hover:-translate-y-1">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="{{ $pet['img'] }}" alt="{{ $pet['name'] }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-4 right-4 badge-adopt shadow">Featured</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <div>
-                                <h3 class="text-2xl font-black text-gray-900">{{ $pet['name'] }}</h3>
-                                <p class="text-gray-500 font-medium">{{ $pet['type'] }} • {{ $pet['age'] }}</p>
-                            </div>
-                            <p class="text-gray-500 text-sm font-medium flex items-center gap-1">
-                                <i class="fas fa-location-dot text-blue-500"></i> {{ $pet['location'] }}
-                            </p>
-                        </div>
-                        <p class="text-gray-600 mb-6 leading-relaxed">{{ $pet['description'] }}</p>
-                        <div class="flex justify-between items-center">
-                            <a href="{{ route('browse.pets') }}" class="btn-accent">
-                                <i class="fas fa-heart"></i> Adopt Me
-                            </a>
-                            <div class="flex gap-2">
-                                <button class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center hover:bg-blue-100 transition-colors duration-300">
-                                    <i class="fas fa-share-nodes text-blue-600"></i>
-                                </button>
-                                <button class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center hover:bg-blue-100 transition-colors duration-300">
-                                    <i class="far fa-heart text-blue-600"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Pet Shop Categories and Featured Products -->
+    <section class="bg-white py-12 sm:py-14">
+        <div class="page-container max-w-7xl">
+            <div class="mb-6 flex items-end justify-between gap-4">
+                <div>
+                    <p class="mb-1 text-xs font-extrabold uppercase tracking-wide text-[#ef704d]">Shop by category</p>
+                    <h2 class="text-2xl font-black text-slate-900 sm:text-3xl">Explore Our Categories</h2>
                 </div>
-                @endforeach
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="{{ route('browse.pets') }}" class="btn-primary">
-                    <i class="fas fa-magnifying-glass"></i>
-                    View All Available Pets
-                    <i class="fas fa-arrow-right"></i>
+                <a href="{{ route('browse.pets') }}" class="mb-1 inline-flex shrink-0 items-center gap-2 text-sm font-bold text-[#df6546] hover:text-[#bb4c31]">
+                    View All <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
                 </a>
             </div>
-        </div>
-    </section>
 
-    <!-- Quick Pet Preview -->
-    <section class="py-16 bg-white">
-        <div class="page-container">
-            <div class="text-center mb-14">
-                <h2 class="section-title mb-4">Quick Peek at Our Pets</h2>
-                <p class="section-subtitle mx-auto">
-                    Take a quick look at some of our adorable pets waiting for their forever homes
-                </p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-12">
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
                 @foreach([
-                    ['name' => 'Buddy', 'type' => 'Golden Retriever', 'img' => 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80'],
-                    ['name' => 'Luna', 'type' => 'Domestic Cat', 'img' => 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1143&q=80'],
-                    ['name' => 'Max', 'type' => 'Beagle', 'img' => 'https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=962&q=80'],
-                    ['name' => 'Coco', 'type' => 'Rabbit', 'img' => 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1169&q=80'],
-                    ['name' => 'Rio', 'type' => 'Parrot', 'img' => 'https://images.unsplash.com/photo-1444464666168-49d633b86797?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'],
-                    ['name' => 'Sky', 'type' => 'Husky', 'img' => 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80']
-                ] as $pet)
-                <div class="group card p-4 hover:-translate-y-1 text-center">
-                    <div class="relative mb-4">
-                        <div class="w-24 h-24 mx-auto rounded-2xl overflow-hidden border-4 border-blue-100 group-hover:border-blue-400 transition-all duration-300">
-                            <img src="{{ $pet['img'] }}" alt="{{ $pet['name'] }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-                            <i class="fas fa-heart text-white text-xs"></i>
-                        </div>
-                    </div>
-                    <h4 class="font-bold text-gray-900 mb-1">{{ $pet['name'] }}</h4>
-                    <p class="text-gray-500 text-sm">{{ $pet['type'] }}</p>
-                </div>
-                @endforeach
-            </div>
-
-            <div class="text-center">
-                <a href="{{ route('browse.pets') }}" class="btn-primary">
-                    <i class="fas fa-paw"></i>
-                    Meet All Our Pets
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pet Services -->
-    <section class="py-20">
-        <div class="page-container">
-            <div class="text-center mb-14">
-                <h2 class="section-title mb-4">Our Pet Services</h2>
-                <p class="section-subtitle mx-auto">
-                    We offer comprehensive services to ensure the health and happiness of your new companion
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                @foreach([
-                    ['icon' => 'syringe', 'title' => 'Vaccinations', 'desc' => 'Complete vaccination protocols for all adopted pets', 'img' => 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80'],
-                    ['icon' => 'user-doctor', 'title' => 'Health Checkups', 'desc' => 'Thorough health examinations by certified veterinarians', 'img' => 'https://images.unsplash.com/photo-1579168765467-3b235f938439?ixlib=rb-4.0.3&auto=format&fit=crop&w=1180&q=80'],
-                    ['icon' => 'paw', 'title' => 'Training Support', 'desc' => 'Behavioral training resources for new pet parents', 'img' => 'https://images.unsplash.com/photo-1558788353-f76d92427f16?ixlib=rb-4.0.3&auto=format&fit=crop&w=1180&q=80'],
-                    ['icon' => 'house', 'title' => 'Home Delivery', 'desc' => 'Safe transport of your new pet directly to your home', 'img' => 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1169&q=80']
-                ] as $service)
-                <div class="group card overflow-hidden hover:-translate-y-1">
-                    <div class="h-40 overflow-hidden">
-                        <img src="{{ $service['img'] }}" alt="{{ $service['title'] }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <div class="p-6">
-                        <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                            <i class="fas fa-{{ $service['icon'] }} text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-black text-gray-900 mb-2">{{ $service['title'] }}</h3>
-                        <p class="text-gray-600 leading-relaxed">{{ $service['desc'] }}</p>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Adopt -->
-    <section class="py-20 bg-white">
-        <div class="page-container">
-            <div class="text-center mb-14">
-                <h2 class="section-title mb-4">Why Adopt from PetPals?</h2>
-                <p class="section-subtitle mx-auto">
-                    We connect loving families with pets in need, creating lifelong bonds and saving lives every day.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                @foreach([
-                    ['icon' => 'heart', 'title' => 'Save a Life', 'desc' => 'Every adoption saves a life and makes space for another animal in need. You are not just getting a pet - you are being a hero.'],
-                    ['icon' => 'stethoscope', 'title' => 'Health Guaranteed', 'desc' => 'All our pets are vaccinated, spayed/neutered, microchipped, and thoroughly health screened before adoption.'],
-                    ['icon' => 'hands-holding-child', 'title' => 'Lifetime Support', 'desc' => 'We provide ongoing support, training resources, and veterinary advice for the entire life of your adopted pet.'],
-                ] as $benefit)
-                <div class="card p-8 text-center hover:-translate-y-1">
-                    <div class="w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <i class="fas fa-{{ $benefit['icon'] }} text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-black text-gray-900 mb-4">{{ $benefit['title'] }}</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        {{ $benefit['desc'] }}
-                    </p>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    <!-- Pet Categories -->
-    <section class="py-20">
-        <div class="page-container">
-            <div class="text-center mb-14">
-                <h2 class="section-title mb-4">Find By Category</h2>
-                <p class="section-subtitle mx-auto">
-                    Explore pets by category to find your perfect match
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                @foreach([
-                    ['icon' => 'dog', 'title' => 'Dogs', 'count' => '245', 'iconBg' => 'bg-blue-600', 'badge' => 'bg-blue-100 text-blue-700 group-hover:bg-blue-200', 'img' => 'https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=962&q=80'],
-                    ['icon' => 'cat', 'title' => 'Cats', 'count' => '189', 'iconBg' => 'bg-green-500', 'badge' => 'bg-green-100 text-green-700 group-hover:bg-green-200', 'img' => 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1143&q=80'],
-                    ['icon' => 'paw', 'title' => 'Small Pets', 'count' => '67', 'iconBg' => 'bg-blue-600', 'badge' => 'bg-blue-100 text-blue-700 group-hover:bg-blue-200', 'img' => 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1169&q=80'],
-                    ['icon' => 'dove', 'title' => 'Birds', 'count' => '42', 'iconBg' => 'bg-green-500', 'badge' => 'bg-green-100 text-green-700 group-hover:bg-green-200', 'img' => 'https://images.unsplash.com/photo-1444464666168-49d633b86797?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80']
+                    ['name' => 'Dogs', 'href' => route('browse.pets', ['search' => 'dog']), 'image' => asset('images/categories/dogs.jpg'), 'fit' => 'object-cover'],
+                    ['name' => 'Cats', 'href' => route('browse.pets', ['search' => 'cat']), 'image' => asset('images/categories/cats.jpg'), 'fit' => 'object-cover'],
+                    ['name' => 'Food', 'href' => '#product-vitalpet', 'image' => asset('images/categories/food.jpg'), 'fit' => 'object-contain p-2'],
+                    ['name' => 'Toys', 'href' => '#product-rope-toy', 'image' => asset('images/categories/toys.png'), 'fit' => 'object-cover'],
+                    ['name' => 'Grooming', 'href' => route('contact'), 'image' => asset('images/categories/grooming.jpg'), 'fit' => 'object-contain p-1'],
                 ] as $category)
-                <div class="group card overflow-hidden hover:-translate-y-1 cursor-pointer">
-                    <div class="h-40 overflow-hidden">
-                        <img src="{{ $category['img'] }}" alt="{{ $category['title'] }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <a href="{{ $category['href'] }}" class="group overflow-hidden rounded-lg border border-gray-100 bg-white transition hover:border-[#f3c0af] hover:shadow-sm">
+                    <div class="h-32 overflow-hidden bg-[#faf7f3] sm:h-36">
+                        <img src="{{ $category['image'] }}" alt="{{ $category['name'] }}" class="h-full w-full {{ $category['fit'] }} transition duration-300 group-hover:scale-105">
                     </div>
-                    <div class="p-6 text-center">
-                        <div class="w-14 h-14 {{ $category['iconBg'] }} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-500 -mt-12 relative z-10 border-4 border-white">
-                            <i class="fas fa-{{ $category['icon'] }} text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-black text-gray-900 mb-1">{{ $category['title'] }}</h3>
-                        <p class="text-gray-500 font-semibold mb-4 text-sm">{{ $category['count'] }} Pets Available</p>
-                        <span class="badge {{ $category['badge'] }} transition-colors duration-300">
-                            Explore Now
-                        </span>
+                    <div class="flex items-center justify-between px-3 py-3">
+                        <span class="font-bold text-slate-900">{{ $category['name'] }}</span>
+                        <span class="inline-flex items-center gap-1 text-xs font-semibold text-[#df6546]">Shop Now <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
                     </div>
-                </div>
+                </a>
                 @endforeach
             </div>
-        </div>
-    </section>
 
-    <!-- Pet Care Resources -->
-    <section class="py-20 bg-white">
-        <div class="page-container">
-            <div class="text-center mb-14">
-                <h2 class="section-title mb-4">Pet Care Resources</h2>
-                <p class="section-subtitle mx-auto">
-                    Helpful guides and articles to ensure you provide the best care for your new pet
-                </p>
+            <div id="featured-products" class="mb-6 mt-11 flex items-end justify-between gap-4 border-t border-gray-100 pt-8">
+                <div>
+                    <p class="mb-1 text-xs font-extrabold uppercase tracking-wide text-[#ef704d]">Featured products</p>
+                    <h2 class="text-2xl font-black text-slate-900 sm:text-3xl">Top Picks for Your Pets</h2>
+                </div>
+                <a href="{{ route('contact') }}" class="mb-1 inline-flex shrink-0 items-center gap-2 text-sm font-bold text-[#df6546] hover:text-[#bb4c31]">
+                    Product Enquiries <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                </a>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
                 @foreach([
-                    ['title' => 'Preparing Your Home for a New Pet', 'excerpt' => 'Learn how to create a safe and welcoming environment for your new furry family member.', 'img' => 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80', 'read_time' => '5 min read'],
-                    ['title' => 'Nutrition Guide for Different Life Stages', 'excerpt' => 'Understand the dietary needs of pets at various stages of their lives for optimal health.', 'img' => 'https://images.unsplash.com/photo-1579168765467-3b235f938439?ixlib=rb-4.0.3&auto=format&fit=crop&w=1180&q=80', 'read_time' => '8 min read'],
-                    ['title' => 'Training Tips for First-Time Pet Owners', 'excerpt' => 'Essential training techniques to build a strong bond with your new companion.', 'img' => 'https://images.unsplash.com/photo-1558788353-f76d92427f16?ixlib=rb-4.0.3&auto=format&fit=crop&w=1180&q=80', 'read_time' => '6 min read']
-                ] as $resource)
-                <div class="group card overflow-hidden hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden">
-                        <img src="{{ $resource['img'] }}" alt="{{ $resource['title'] }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    ['id' => 'product-dog-food', 'name' => 'Chunky Adult Dog Food', 'detail' => 'Adult dog nutrition with real meat.', 'image' => asset('images/products/dog-food.jpg')],
+                    ['id' => 'product-vitalpet', 'name' => 'VitalPet Adult Dog Food', 'detail' => 'Complete food for adult dogs.', 'image' => asset('images/products/pet-food.jpg')],
+                    ['id' => 'product-pet-bed', 'name' => 'Cozy Pet Bed', 'detail' => 'A soft, supportive place to rest.', 'image' => asset('images/products/pet-bed.jpg')],
+                    ['id' => 'product-rope-toy', 'name' => 'Rope Toy Set', 'detail' => 'Colorful toys for play and chewing.', 'image' => asset('images/products/rope-toy.jpg')],
+                ] as $product)
+                <article id="{{ $product['id'] }}" class="flex h-full flex-col overflow-hidden rounded-lg border border-gray-100 bg-white transition hover:border-[#f3c0af] hover:shadow-sm">
+                    <div class="flex h-52 shrink-0 items-center justify-center overflow-hidden bg-[#faf8f5] p-3">
+                        <img src="{{ $product['image'] }}" alt="{{ $product['name'] }}" class="h-full w-full object-contain">
                     </div>
-                    <div class="p-6">
-                        <span class="badge-buy mb-4">{{ $resource['read_time'] }}</span>
-                        <h3 class="text-lg font-black text-gray-900 mb-3">{{ $resource['title'] }}</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">{{ $resource['excerpt'] }}</p>
-                        <a href="#" class="group text-blue-600 font-bold hover:text-blue-700 transition-colors duration-300 inline-flex items-center gap-2">
-                            Read More
-                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                    <div class="flex flex-1 flex-col p-4">
+                        <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-[#d9795b]">Pet essentials</p>
+                        <h3 class="mb-1 min-h-12 text-base font-extrabold text-slate-900">{{ $product['name'] }}</h3>
+                        <p class="min-h-10 text-sm leading-5 text-slate-600">{{ $product['detail'] }}</p>
+                        <a href="{{ route('contact') }}" class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#ef704d] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#df5d3c]">
+                            Enquire <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
                         </a>
                     </div>
-                </div>
+                </article>
                 @endforeach
             </div>
+        </div>
+    </section>
 
-            <div class="text-center mt-12">
-                <a href="#" class="btn-primary">
-                    <i class="fas fa-book-open"></i>
-                    View All Resources
-                </a>
+    <!-- Adoption Spotlight -->
+    <section class="bg-[#fffaf5] py-12 sm:py-14">
+        <div class="page-container max-w-7xl">
+            <div class="grid items-center gap-7 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-8">
+                <div class="relative flex h-full flex-col justify-center py-2">
+                    <p class="mb-2 text-xs font-extrabold uppercase tracking-wide text-[#ef704d]">Adoption</p>
+                    <h2 class="mb-3 text-3xl font-black leading-tight text-slate-900">Adopt a Friend</h2>
+                    <p class="mb-5 max-w-sm text-sm leading-6 text-slate-600">
+                        Give a loving home to a pet in need. Find your perfect companion and make a difference.
+                    </p>
+                    <a href="{{ route('browse.pets') }}" class="inline-flex w-fit items-center gap-2 rounded-full bg-[#ef704d] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#df5d3c]">
+                        View All Pets <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                    </a>
+                    <div class="mt-5 hidden items-center gap-2 text-[#ef704d]/60 sm:flex lg:absolute lg:-bottom-4 lg:right-0 lg:translate-x-5">
+                        <i class="fas fa-paw text-3xl" aria-hidden="true"></i>
+                        <span class="-rotate-6 font-semibold italic text-slate-600">Adopt, don't shop</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    @forelse($availablePets as $pet)
+                        @php
+                            $petImage = $pet->image_url
+                                ? (str_starts_with($pet->image_url, 'http') ? $pet->image_url : asset('storage/' . $pet->image_url))
+                                : asset('images/pet-hero.jpg');
+                            $petType = $pet->species ?: optional($pet->petType)->name ?: 'Pet';
+                        @endphp
+                        <article class="overflow-hidden rounded-lg border border-[#eee8e2] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                            <a href="{{ route('pets.show', $pet->id) }}" class="relative block h-52 overflow-hidden bg-[#f6f2ed] sm:h-56">
+                                <img src="{{ $petImage }}" alt="{{ $pet->name }}" class="h-full w-full object-cover" onerror="this.src='{{ asset('images/pet-hero.jpg') }}'">
+                                <span class="absolute right-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-bold text-[#d96a4c]">Available</span>
+                            </a>
+                            <div class="p-4">
+                                <h3 class="mb-1 text-lg font-extrabold text-slate-900">{{ $pet->name }}</h3>
+                                <p class="text-xs text-slate-500">
+                                    {{ $pet->age ? $pet->age . ' years' : 'Age not listed' }} <span aria-hidden="true">·</span> {{ $pet->breed ?: ucfirst($petType) }}
+                                </p>
+                                <a href="{{ route('pets.show', $pet->id) }}" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#df6546] hover:text-[#bb4c31]">
+                                    Adopt Now <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </article>
+                    @empty
+                    @endforelse
+
+                    <article class="overflow-hidden rounded-lg border border-[#eee8e2] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                        <a href="{{ route('contact') }}" class="relative block h-52 overflow-hidden bg-[#f6f2ed] sm:h-56">
+                            <img src="{{ asset('parrot.jpg') }}" alt="Colorful parrot perched on a branch" class="h-full w-full object-cover">
+                            <span class="absolute right-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-bold text-[#d96a4c]">Adoption enquiry</span>
+                        </a>
+                        <div class="p-4">
+                            <h3 class="mb-1 text-lg font-extrabold text-slate-900">Parrot</h3>
+                            <p class="text-xs text-slate-500">Bird <span aria-hidden="true">·</span> Ask us about adoption</p>
+                            <a href="{{ route('contact') }}" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#df6546] hover:text-[#bb4c31]">
+                                Ask About Adoption <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section class="border-y border-[#f1e8df] bg-[#fffaf5] py-7">
+        <div class="page-container grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-0">
+            @foreach([
+                ['icon' => 'heart', 'title' => 'Thoughtful Matching', 'detail' => 'Find your right companion'],
+                ['icon' => 'shield-heart', 'title' => 'Trusted Care', 'detail' => 'Pets come first'],
+                ['icon' => 'house-medical', 'title' => 'Healthy Starts', 'detail' => 'Care information that matters'],
+                ['icon' => 'headset', 'title' => 'Adoption Support', 'detail' => 'Help through every step'],
+            ] as $benefit)
+                <div class="flex items-center gap-3 md:justify-center md:border-r md:border-[#eadfd7] md:px-4 last:md:border-r-0">
+                    <i class="fas fa-{{ $benefit['icon'] }} text-xl text-[#ef704d]" aria-hidden="true"></i>
+                    <div>
+                        <h3 class="text-sm font-extrabold text-slate-800">{{ $benefit['title'] }}</h3>
+                        <p class="mt-0.5 text-xs text-slate-500">{{ $benefit['detail'] }}</p>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </section>
 
     <!-- Adoption Process -->
-    <section id="adoption-process" class="py-20">
+    <section id="adoption-process" class="bg-[#fffaf5] py-16 sm:py-20">
         <div class="page-container">
             <div class="text-center mb-14">
                 <h2 class="section-title mb-4">Simple Adoption Process</h2>
@@ -332,11 +222,11 @@
                 ] as $step)
                 <div class="text-center group relative">
                     <div class="relative mb-6">
-                        <div class="w-24 h-24 bg-blue-50 rounded-3xl flex items-center justify-center mx-auto group-hover:bg-blue-100 transition-all duration-300 shadow-sm group-hover:scale-110">
-                            <span class="text-blue-600 font-black text-3xl">{{ $step['num'] }}</span>
+                        <div class="w-20 h-20 rounded-full border border-[#f3d5c8] bg-[#ffebe2] flex items-center justify-center mx-auto transition-colors duration-300 group-hover:bg-[#f9ddd1]">
+                            <span class="text-[#df6546] font-black text-2xl">{{ $step['num'] }}</span>
                         </div>
                         @if($step['num'] != '4')
-                        <div class="hidden md:block absolute top-12 left-1/2 w-full h-1 bg-blue-100 -z-10"></div>
+                        <div class="hidden md:block absolute top-10 left-1/2 w-full h-px bg-[#edcfc1] -z-10"></div>
                         @endif
                     </div>
                     <h3 class="text-xl font-black text-gray-900 mb-3">{{ $step['title'] }}</h3>
@@ -346,7 +236,7 @@
             </div>
 
             <div class="text-center mt-14">
-                <a href="{{ route('browse.pets') }}" class="btn-accent">
+                <a href="{{ route('browse.pets') }}" class="inline-flex items-center gap-2 rounded-full bg-[#ef704d] px-6 py-3 font-bold text-white transition hover:bg-[#df5d3c]">
                     <i class="fas fa-circle-play text-lg"></i>
                     Start Your Adoption Journey
                 </a>
@@ -355,9 +245,10 @@
     </section>
 
     <!-- Success Stories -->
-    <section class="py-20 bg-white">
+    <section class="bg-[#fffaf5] py-16 sm:py-20">
         <div class="page-container">
             <div class="text-center mb-14">
+                <p class="mb-2 text-xs font-extrabold uppercase tracking-wide text-[#ef704d]">Community stories</p>
                 <h2 class="section-title mb-4">Happy Tails</h2>
                 <p class="section-subtitle mx-auto">
                     Read heartwarming stories from families who found their perfect companions through PetPals.
@@ -370,16 +261,16 @@
                     ['name' => 'Michael Chen', 'pet' => 'Bella (Domestic Shorthair)', 'img' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80', 'review' => 'Bella has transformed our home with her playful energy and loving nature. The matching process was excellent - they really understood what we were looking for in a pet.'],
                     ['name' => 'Jessica Martinez', 'pet' => 'Simba & Nala (Kittens)', 'img' => 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80', 'review' => 'We adopted two kittens, and they have been the perfect addition to our family. The adoption counselors were so helpful in finding us the right pair. Highly recommend PetPals!']
                 ] as $testimonial)
-                <div class="card p-8 hover:-translate-y-1">
+                <div class="h-full rounded-lg border border-[#eee8e2] bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
                     <div class="flex items-center mb-6">
-                        <img src="{{ $testimonial['img'] }}" alt="{{ $testimonial['name'] }}" class="w-14 h-14 rounded-2xl object-cover border-2 border-blue-100">
+                        <img src="{{ $testimonial['img'] }}" alt="{{ $testimonial['name'] }}" class="w-14 h-14 rounded-full object-cover border-2 border-[#ffebe2]">
                         <div class="ml-4">
                             <h4 class="font-black text-gray-900">{{ $testimonial['name'] }}</h4>
                             <p class="text-gray-500 text-sm">{{ $testimonial['pet'] }}</p>
                         </div>
                     </div>
                     <p class="text-gray-600 mb-6 leading-relaxed">"{{ $testimonial['review'] }}"</p>
-                    <div class="flex text-amber-400">
+                    <div class="flex text-[#ef704d]">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -393,24 +284,25 @@
     </section>
 
     <!-- Newsletter -->
-    <section class="py-20 bg-gradient-to-br from-blue-600 to-blue-700">
+    <section class="border-y border-[#f1e8df] bg-[#fffaf5] py-14 sm:py-16">
         <div class="page-container text-center">
-            <div class="max-w-2xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-black mb-4 text-white">
+            <div class="mx-auto max-w-2xl">
+                <p class="mb-2 text-xs font-extrabold uppercase tracking-wide text-[#ef704d]">PetPals updates</p>
+                <h2 class="mb-4 text-3xl font-black text-slate-900 sm:text-4xl">
                     Stay Updated
                 </h2>
-                <p class="text-lg mb-8 text-blue-100 leading-relaxed">
+                <p class="mb-7 text-base leading-relaxed text-slate-600 sm:text-lg">
                     Subscribe to our newsletter for the latest pet arrivals, adoption stories, and care tips.
                 </p>
 
-                <form class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 flex flex-col md:flex-row gap-4">
+                <form class="flex flex-col gap-2 rounded-xl border border-[#eadfd7] bg-white p-2 shadow-sm sm:flex-row">
                     <input type="email" placeholder="Enter your email address"
-                           class="flex-grow px-5 py-3 rounded-xl border-0 focus:outline-none focus:ring-2 focus:ring-white">
-                    <button type="submit" class="bg-amber-400 text-gray-900 px-6 py-3 rounded-xl font-bold hover:bg-amber-500 transition-all duration-300">
+                           class="min-w-0 flex-1 rounded-lg border border-transparent bg-transparent px-4 py-3 text-slate-700 placeholder:text-slate-400 focus:border-[#ef704d] focus:outline-none focus:ring-2 focus:ring-[#ef704d]/20">
+                    <button type="submit" class="rounded-lg bg-[#ef704d] px-6 py-3 font-bold text-white transition hover:bg-[#df5d3c]">
                         Subscribe Now
                     </button>
                 </form>
-                <p class="text-blue-100 mt-4 text-sm">
+                <p class="mt-4 text-sm text-slate-500">
                     We respect your privacy. Unsubscribe at any time.
                 </p>
             </div>
@@ -418,33 +310,34 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="py-20">
+    <section class="bg-[#fffaf5] py-14 sm:py-16">
         <div class="page-container text-center">
-            <h2 class="section-title mb-4">Ready to Find Your New Best Friend?</h2>
-            <p class="section-subtitle mx-auto mb-10">
+            <p class="mb-2 text-xs font-extrabold uppercase tracking-wide text-[#ef704d]">Start your story</p>
+            <h2 class="mb-4 text-3xl font-black text-slate-900 sm:text-4xl">Ready to Find Your New Best Friend?</h2>
+            <p class="mx-auto mb-8 max-w-2xl leading-relaxed text-slate-600">
                 Join thousands of happy families who found their perfect pet through PetPals. Start your adoption journey today!
             </p>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-                <a href="{{ route('browse.pets') }}" class="btn-primary !text-lg !px-10 !py-4">
+            <div class="mb-8 flex flex-col justify-center gap-3 sm:flex-row">
+                <a href="{{ route('browse.pets') }}" class="inline-flex items-center justify-center gap-2 rounded-full bg-[#ef704d] px-8 py-3 font-bold text-white transition hover:bg-[#df5d3c]">
                     <i class="fas fa-magnifying-glass"></i>
                     Browse Available Pets
                 </a>
-                <a href="#" class="btn-outline !text-lg !px-10 !py-4">
+                <a href="#" class="inline-flex items-center justify-center gap-2 rounded-full border border-[#ef704d] px-8 py-3 font-bold text-[#d95d3f] transition hover:bg-[#fff0e9]">
                     <i class="fas fa-circle-question"></i>
                     Adoption FAQs
                 </a>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-6">
+            <div class="flex flex-wrap justify-center gap-3">
                 @foreach([
                     ['icon' => 'shield-halved', 'text' => '100% Safe Process'],
                     ['icon' => 'clock', 'text' => '24/7 Support'],
                     ['icon' => 'award', 'text' => 'Verified Shelters']
                 ] as $feature)
-                <div class="flex items-center gap-2 bg-white px-5 py-3 rounded-2xl border border-gray-100 shadow-sm">
-                    <i class="fas fa-{{ $feature['icon'] }} text-blue-600"></i>
-                    <span class="font-bold text-gray-700">{{ $feature['text'] }}</span>
+                <div class="flex items-center gap-2 rounded-full border border-[#eadfd7] bg-white px-4 py-2.5">
+                    <i class="fas fa-{{ $feature['icon'] }} text-[#ef704d]"></i>
+                    <span class="text-sm font-bold text-slate-700">{{ $feature['text'] }}</span>
                 </div>
                 @endforeach
             </div>

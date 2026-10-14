@@ -55,3 +55,12 @@
         @apply badge bg-blue-100 text-blue-700;
     }
 }
+
+@layer utilities {
+    .hero-photo-blend {
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+        -webkit-mask-composite: source-in;
+        mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%), linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+        mask-composite: intersect;
+    }
+}
