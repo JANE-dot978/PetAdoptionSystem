@@ -2,59 +2,50 @@
 
 @section('content')
 
-<div class="min-h-screen bg-gray-50">
+<div id="about-page" class="min-h-screen bg-white">
 
-    
-    <section class="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 py-20 md:py-28">
-        <div class="absolute inset-0">
-            <div class="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full"></div>
-            <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-amber-400/20 rounded-full animate-float"></div>
-        </div>
-
-        <div class="page-container text-center relative z-10">
-            <div class="max-w-5xl mx-auto">
-                <div class="inline-flex items-center bg-white/20 backdrop-blur-lg rounded-full px-6 py-3 mb-8 border border-white/30">
-                    <span class="w-2 h-2 bg-amber-400 rounded-full mr-2 animate-pulse"></span>
-                    <span class="text-white font-semibold text-sm">Trusted by 10,000+ Pet Lovers</span>
-                </div>
-
-                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight text-white">
+    <section class="relative overflow-hidden bg-[#fffaf5]">
+        <div class="mx-auto grid min-h-[520px] w-full max-w-[1250px] items-center gap-8 px-5 py-10 md:grid-cols-2 md:gap-10 md:px-8 md:py-8 xl:max-w-[1040px] xl:grid-cols-[610px_400px] xl:gap-[30px] xl:px-0">
+            <div class="max-w-[610px] py-2 md:py-4">
+                <p class="mb-5 inline-flex items-center gap-2 rounded-full bg-[#ffebe2] px-4 py-2 text-sm font-bold text-[#d95d3f]">
+                    <span class="h-2 w-2 rounded-full bg-[#ef704d]"></span>
+                    Trusted by 10,000+ Pet Lovers
+                </p>
+                <h1 class="mb-5 text-4xl font-black leading-[1.08] text-slate-900 sm:text-5xl xl:text-[50px]">
                     Find Your Perfect
-                    <span class="block text-amber-400">Furry Friend</span>
+                    <span class="block text-[#ef704d]">Furry Friend</span>
                 </h1>
-
-                <p class="text-xl md:text-2xl mb-12 text-blue-50 max-w-3xl mx-auto leading-relaxed font-medium">
+                <p class="mb-6 max-w-[510px] text-base leading-7 text-slate-600 sm:text-lg">
                     Where love finds a home. Adopt, and shop — give a homeless pet a loving family and discover unconditional love.
                 </p>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-                    <a href="{{ route('browse.pets') }}"
-                       class="group bg-white text-blue-700 px-10 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3 min-w-[260px]">
-                        <i class="fas fa-paw text-xl group-hover:rotate-12 transition-transform duration-300"></i>
+                <div class="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                    <a href="{{ route('browse.pets') }}" class="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#ef704d] px-6 py-3 font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#df5d3c]">
+                        <i class="fas fa-paw" aria-hidden="true"></i>
                         Browse Available Pets
                     </a>
-                    <a href="#adoption-process"
-                       class="group bg-white/10 backdrop-blur-lg border-2 border-white/60 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3 min-w-[260px]">
-                        <i class="fas fa-circle-play text-xl group-hover:scale-110 transition-transform duration-300"></i>
+                    <a href="#adoption-process" class="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-[#ef704d] px-6 py-3 font-bold text-[#d95d3f] transition hover:bg-[#fff0e9]">
+                        <i class="fas fa-circle-play" aria-hidden="true"></i>
                         How to Adopt
                     </a>
                 </div>
 
-                <div class="bg-white/95 backdrop-blur-xl rounded-3xl p-8 max-w-5xl mx-auto shadow-2xl">
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                        @foreach([
-                            ['num' => '2,500+', 'label' => 'Pets Adopted'],
-                            ['num' => '98%', 'label' => 'Success Rate'],
-                            ['num' => '150+', 'label' => 'Rescue Partners'],
-                            ['num' => '24/7', 'label' => 'Support'],
-                        ] as $stat)
-                        <div class="text-center">
-                            <div class="text-4xl md:text-5xl font-black text-blue-600 mb-1">{{ $stat['num'] }}</div>
-                            <div class="text-gray-600 font-semibold tracking-wide">{{ $stat['label'] }}</div>
-                        </div>
-                        @endforeach
+                <div class="mt-8 grid max-w-[590px] grid-cols-2 gap-x-4 gap-y-5 border-t border-[#eadfd7] pt-5 sm:gap-x-5">
+                    @foreach([
+                        ['num' => '2,500+', 'label' => 'Pets Adopted'],
+                        ['num' => '98%', 'label' => 'Success Rate'],
+                        ['num' => '150+', 'label' => 'Rescue Partners'],
+                        ['num' => '24/7', 'label' => 'Support'],
+                    ] as $stat)
+                    <div>
+                        <div class="text-2xl font-black text-[#d95d3f]">{{ $stat['num'] }}</div>
+                        <div class="text-xs font-semibold text-slate-600 sm:text-sm">{{ $stat['label'] }}</div>
                     </div>
+                    @endforeach
                 </div>
+            </div>
+
+            <div class="relative isolate mx-auto h-[360px] w-full max-w-[650px] bg-[#fffaf5] md:h-[460px] xl:mx-0 xl:h-[500px] xl:w-full xl:max-w-none">
+                <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85" alt="A family spending time with their adopted dog" class="hero-photo-blend relative z-10 h-full max-w-full object-contain object-left">
             </div>
         </div>
     </section>
@@ -400,12 +391,99 @@
 </div>
 
 <style>
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+#about-page > section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #fff;
+    background-image: none;
 }
-.animate-float {
-    animation: float 6s ease-in-out infinite;
+
+#about-page > section:nth-of-type(odd) {
+    background-color: #fffaf5;
+}
+
+#about-page > section:first-of-type {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#about-page [class~="bg-gradient-to-br"] {
+    background-color: #fffaf5;
+    background-image: none;
+}
+
+#about-page > section.bg-gradient-to-br {
+    background-color: #fff;
+}
+
+#about-page [class~="bg-blue-600"],
+#about-page [class~="bg-blue-700"],
+#about-page [class~="bg-blue-800"],
+#about-page [class~="bg-green-500"] {
+    background-color: #ef704d;
+}
+
+#about-page [class~="bg-blue-50"],
+#about-page [class~="bg-blue-100"],
+#about-page [class~="bg-green-100"] {
+    background-color: #ffebe2;
+}
+
+#about-page [class~="bg-white/10"] {
+    background-color: #fff;
+}
+
+#about-page [class~="text-blue-600"],
+#about-page [class~="text-blue-700"] {
+    color: #d95d3f;
+}
+
+#about-page [class~="text-blue-50"],
+#about-page [class~="text-blue-100"] {
+    color: #64748b;
+}
+
+#about-page [class~="border-blue-100"],
+#about-page [class~="border-blue-300"],
+#about-page [class~="border-green-300"] {
+    border-color: #f3c0af;
+}
+
+#about-page > section:nth-of-type(6) [class~="text-white"] {
+    color: #1e293b;
+}
+
+#about-page > section:nth-of-type(6) .btn {
+    background-color: #ef704d;
+    color: #fff;
+}
+
+#about-page .card {
+    border-radius: 8px;
+    border-color: #eee8e2;
+    box-shadow: none;
+}
+
+#about-page [class~="rounded-3xl"],
+#about-page [class~="rounded-2xl"],
+#about-page [class~="rounded-xl"] {
+    border-radius: 8px;
+}
+
+#about-page .btn-primary,
+#about-page .btn-accent {
+    background-color: #ef704d;
+    color: #fff;
+}
+
+#about-page .btn-outline {
+    border-color: #ef704d;
+    color: #d95d3f;
+}
+
+#about-page .badge-buy {
+    background-color: #ffebe2;
+    color: #d95d3f;
 }
 </style>
 
